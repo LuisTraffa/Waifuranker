@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
 import static com.lvt.waifuranker.controllers.AuthenticationController.isLoggedIn;
 
 @Controller
@@ -26,7 +25,7 @@ public class IndexController {
         System.out.println(waifuService.getWaifuList().toString());
         model.addAttribute("waifus", waifuService.getWaifuList());
         if (isLoggedIn()) {
-            return "indexPrivate";
+            return "index";
         }
         return "indexPublic";
     }
