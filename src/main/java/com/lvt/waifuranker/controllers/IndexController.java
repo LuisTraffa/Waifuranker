@@ -25,7 +25,7 @@ public class IndexController {
         System.out.println(waifuService.getWaifuList().toString());
         model.addAttribute("waifus", waifuService.getWaifuList());
         if (isLoggedIn()) {
-            return "index";
+            return "indexPrivate";
         }
         return "indexPublic";
     }
